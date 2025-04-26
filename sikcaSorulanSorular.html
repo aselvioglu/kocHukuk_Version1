@@ -137,7 +137,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             transition: all 0.3s ease;
             margin: 5px;
-            flex:1 1 auto;
+            flex: 1 1 auto;
             min-width: 120px;
             max-width: 220px;
             text-align: center;
@@ -160,11 +160,39 @@
             margin-bottom: 20px;
         }
 
+        .indicator {
+            display: none;
+            position: fixed;
+            top: 40px;
+            right: 20px;
+            font-size: 40px;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.5;
+            }
+        }
+
         /* Responsive adjustments */
-        @media (max-width: 991.98px) {
+        @media only screen and (max-width: 991.98px) {
             .navbar {
                 top: 38px !important;
                 padding: 0.5rem 1rem !important;
+            }
+
+            .indicator {
+                display: block;
+                /* Sadece mobilde göster */
             }
 
             .navbar-collapse {
@@ -172,13 +200,17 @@
                 margin-top: 0.5rem;
                 padding: 1rem;
             }
+
             .content-wrapper {
-        margin-top: 200px;  /* Navbar'dan biraz daha fazla boşluk bırakıyoruz */
-    }
-    .top-ribbon{
-    font-size: 0.85rem;
-        padding: 6px 0;
-}
+                margin-top: 200px;
+                /* Navbar'dan biraz daha fazla boşluk bırakıyoruz */
+            }
+
+            .top-ribbon {
+                font-size: 0.85rem;
+                padding: 6px 0;
+            }
+
             .sidebar {
                 order: 1;
             }
@@ -254,6 +286,9 @@
                         <i class="bi bi-linkedin"></i></a>
                     <a href="mailto:av.birsu.koc@gmail.com" class="text-dark"><i class="bi bi-envelope"></i></a>
                 </div>
+                <div class="indicator">
+                    <a href="#mainPart" style="color: #269b1c;"><i class="bi bi-arrow-down-square-fill"></i></a>
+                </div>
             </div>
         </nav>
     </header>
@@ -276,7 +311,7 @@
             </div>
         </div>
 
-        <div class="main-content text-dark">
+        <div id="mainPart" class="main-content text-dark">
             <div class="background-container">
                 <br><br><br>
                 <h2 class="text-dark text-center">Avukat & Arabulucu Birsu KOÇ</h2>
@@ -291,7 +326,7 @@
                     <a href="mailto:av.birsu.koc@gmail.com"><i class="bi bi-envelope me-2"></i>Bize Yazın</a>
                 </div>
             </div>
-            
+
 
             <hr class="my-4">
             <h3 class="text-center mb-4">Sıkça Sorulanlar</h3>
@@ -301,8 +336,8 @@
                 <!--SORU BASLANGIC-->
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="faq1-heading">
-                        <button class="accordion-button " style="background-color:  #cacfd4;" type="button" data-bs-toggle="collapse" data-bs-target="#faq1"
-                            aria-expanded="true" aria-controls="faq1">
+                        <button class="accordion-button " style="background-color:  #cacfd4;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
                             Emekli maaşına haciz koyulabilir mi?
                         </button>
                     </h2>
@@ -336,8 +371,8 @@
                 <!--SORU BASLANGIC-->
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="faq3-heading">
-                        <button class="accordion-button" style="background-color:  #cacfd4;" type="button" data-bs-toggle="collapse" data-bs-target="#faq3"
-                            aria-expanded="true" aria-controls="faq3">
+                        <button class="accordion-button" style="background-color:  #cacfd4;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="true" aria-controls="faq3">
                             Boşanma davası ne kadar sürer?
                         </button>
                     </h2>
@@ -377,8 +412,8 @@
                 <!--SORU BASLANGIC-->
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="faq4-heading">
-                        <button class="accordion-button" style="background-color:  #cacfd4;" type="button" data-bs-toggle="collapse" data-bs-target="#faq4"
-                            aria-expanded="true" aria-controls="faq4">
+                        <button class="accordion-button" style="background-color:  #cacfd4;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="true" aria-controls="faq4">
                             İcra takibi nasıl açılır?
                         </button>
                     </h2>
@@ -454,8 +489,8 @@
                 <!--SORU BASLANGIC-->
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="faq5-heading">
-                        <button class="accordion-button" style="background-color:  #cacfd4;" type="button" data-bs-toggle="collapse" data-bs-target="#faq5"
-                            aria-expanded="true" aria-controls="faq5">
+                        <button class="accordion-button" style="background-color:  #cacfd4;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="true" aria-controls="faq5">
                             Yürütmeyi durdurma kararı nasıl alınır? </button>
                     </h2>
                     <div id="faq5" class="accordion-collapse collapse" aria-labelledby="faq5-heading"
@@ -517,8 +552,8 @@
                 <!--SORU BASLANGIC-->
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="faq6-heading">
-                        <button class="accordion-button" style="background-color:  #cacfd4;" type="button" data-bs-toggle="collapse" data-bs-target="#faq6"
-                            aria-expanded="true" aria-controls="faq6">
+                        <button class="accordion-button" style="background-color:  #cacfd4;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="true" aria-controls="faq6">
                             Dava dilekçesi nasıl yazılır?
                         </button>
                     </h2>
@@ -609,8 +644,8 @@
                 <!--SORU BASLANGIC-->
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="faq7-heading">
-                        <button class="accordion-button" style="background-color: #cacfd4;" type="button" data-bs-toggle="collapse" data-bs-target="#faq7"
-                            aria-expanded="true" aria-controls="faq7">
+                        <button class="accordion-button" style="background-color: #cacfd4;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="true" aria-controls="faq7">
                             Tazminat davası nasıl açılır?
                         </button>
                     </h2>
@@ -674,8 +709,8 @@
                 <!--SORU BASLANGIC-->
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="faq8-heading">
-                        <button class="accordion-button" style="background-color:  #cacfd4;" type="button" data-bs-toggle="collapse" data-bs-target="#faq8"
-                            aria-expanded="true" aria-controls="faq8">
+                        <button class="accordion-button" style="background-color:  #cacfd4;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="true" aria-controls="faq8">
                             Gözaltına alındım ne yapmam lazım?
                         </button>
                     </h2>
@@ -719,8 +754,8 @@
                 <!--SORU BASLANGIC-->
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="faq9-heading">
-                        <button class="accordion-button" style="background-color:  #cacfd4;" type="button" data-bs-toggle="collapse" data-bs-target="#faq9"
-                            aria-expanded="true" aria-controls="faq9">
+                        <button class="accordion-button" style="background-color:  #cacfd4;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="true" aria-controls="faq9">
                             Kiracı kira vermiyor ve evden çıkmıyor ne yapmam lazım?
                         </button>
                     </h2>
@@ -765,8 +800,9 @@
                 <!--SORU BASLANGIC-->
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="faq10-heading">
-                        <button class="accordion-button" style="background-color:  #cacfd4;" type="button" data-bs-toggle="collapse" data-bs-target="#faq11"
-                            aria-expanded="true" aria-controls="faq11">
+                        <button class="accordion-button" style="background-color:  #cacfd4;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq11" aria-expanded="true"
+                            aria-controls="faq11">
                             Eve icra tebligatı geldi ne yapmalıyım?
                         </button>
                     </h2>
@@ -803,8 +839,9 @@
                 <!--SORU BASLANGIC-->
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="faq12-heading">
-                        <button class="accordion-button" style="background-color: #cacfd4;" type="button" data-bs-toggle="collapse" data-bs-target="#faq12"
-                            aria-expanded="true" aria-controls="faq12">
+                        <button class="accordion-button" style="background-color: #cacfd4;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq12" aria-expanded="true"
+                            aria-controls="faq12">
                             İşten ayrılmak istiyorum hukuki olarak ne yapmalıyım?
                         </button>
                     </h2>
@@ -839,22 +876,22 @@
 
                 <!--SORU SON-->
 
-                
-            </div>
-</div>
-</div>
-            <!-- Footer -->
-            <footer>
-                <div class="text-center">
-                    Koç Hukuk Bürosu Arabuluculuk-Danışmanlık. REŞATBEY MAH. T. CEMAL BERİKER BULV. NO:22 ÖZMUCUR APT.
-                    K:5 D:34
-                    (Seyhan Oteli Bitişiği) SEYHAN/ADANA -&copy; 2025 Tüm hakları saklıdır.
-                </div>
-            </footer>
 
-            <!-- Bootstrap JS -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="text-center">
+            Koç Hukuk Bürosu Arabuluculuk-Danışmanlık. REŞATBEY MAH. T. CEMAL BERİKER BULV. NO:22 ÖZMUCUR APT.
+            K:5 D:34
+            (Seyhan Oteli Bitişiği) SEYHAN/ADANA -&copy; 2025 Tüm hakları saklıdır.
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </body>
 
 </html>
