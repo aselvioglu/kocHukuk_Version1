@@ -101,7 +101,7 @@
         .background-container {
             position: relative;
             width: 100%;
-            height: 300px;
+            height: 200px;
             border-radius: 8px;
             overflow: hidden;
             margin-bottom: 20px;
@@ -152,7 +152,7 @@
             display: block;
         }
 
-        .team-member-img {
+          .team-member-img {
             width: 100%;
             max-width: 300px;
             height: auto;
@@ -160,6 +160,27 @@
             margin-bottom: 20px;
         }
 
+
+        .team-member {
+            background-color: #d8dabe;
+            border-radius: 10px;
+            padding: 20px;
+            border-style: groove;
+            border-color: #88001b;
+        }
+
+        .flex-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #d4f0be;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.title-line {
+  text-align: center;
+}
         .indicator {
             display: none;
             position: fixed;
@@ -222,7 +243,7 @@
     </style>
 </head>
 
-<body class="bg-success">
+<body class="bg-light">
 
     <header>
         <div class="top-ribbon">
@@ -330,10 +351,10 @@
             <hr>
             <div>
 
-                <section>
+                <section >
                     <h2>İletişim Bilgileri</h2>
 
-                    <address>
+                    <address class="team-member">
                         <p><strong>Adres:</strong> REŞATBEY MAH. T. CEMAL BERİKER BULV. NO:22 ÖZMUCUR APT. K:5 D:34
                             (Seyhan Oteli Bitişiği) SEYHAN/ADANA</p>
                         <p><strong>Telefon No:</strong> <a href="tel:+903225033534" style="color: #88001b;">+90 (322)
