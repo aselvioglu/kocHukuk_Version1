@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = htmlspecialchars(trim($_POST["message"]));
 
     // e-posta adresi
-    $to = "aydinordek@gmail.com";
+    $to = "bilgi@birsukoc.av.tr";
 
     // Mail başlıkları
     $headers = "From: $email\r\n";
