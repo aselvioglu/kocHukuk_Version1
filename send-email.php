@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = htmlspecialchars(trim($_POST["message"]));
 
     // e-posta adresi
-    $to = "info@canhukuk.eu";
+    $to = "aydinordek@gmail.com";
 
     // Mail başlıkları
     $headers = "From: $email\r\n";
@@ -15,18 +15,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
     // Mail gövdesi
-    $body = "Ad Soyad: $name\n";
+    $body  = "Ad Soyad: $name\n";
     $body .= "Email: $email\n";
     $body .= "Konu: $subject\n\n";
     $body .= "Mesaj:\n$message";
 
     // Mail gönder
     if (mail($to, $subject, $body, $headers)) {
-        echo "Mesajınız başarıyla gönderildi!";
+        echo "Mesajınız başarıyla gönderildi. Ana sayfaya yönlendiriliyorsunuz...";
+        header("Refresh: 3; URL=index.html");
+        exit;
     } else {
-        echo "Hata: Mesaj gönderilemedi.";
+        echo "Hata: Mesaj gönderilemedi. Ana sayfaya yönlendiriliyorsunuz...";
+        header("Refresh: 3; URL=index.html");
+        exit;
     }
 } else {
-    echo "Geçersiz istek.";
+    echo "Geçersiz istek. Ana sayfaya yönlendiriliyorsunuz...";
+    header("Refresh: 3; URL=index.html");
+    exit;
 }
 ?>
